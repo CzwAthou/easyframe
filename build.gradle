@@ -1,0 +1,60 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.3'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8' //apt编译插件
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+ext {
+    compileSdkVersion = 24
+    buildToolsVersion = '24.0.1'
+
+    minSdkVersion = 14
+    targetSdkVersion = 23
+
+    versionCode = 1
+    versionName = "1.0.0"
+
+    dependencies = [
+            "support-v4"              : 'com.android.support:support-v4:24+',
+            "appcompat-v7"            : 'com.android.support:appcompat-v7:24+',
+            "design"                  : 'com.android.support:design:24+',
+            "multidex"                : 'com.android.support:multidex:1.0.+',
+           // "gson"                    : 'com.google.code.gson:gson:2.2.4', //gson解析包
+           // "eventbus"                : 'org.greenrobot:eventbus:3.0.0', //事件通知库
+           // "butterknife"             : 'com.jakewharton:butterknife:8.4.0', //注解，替代findview
+           // "butterknife-compiler"    : 'com.jakewharton:butterknife-compiler:8.4.0', //注解，替代findview
+            "rxjava"                  : 'io.reactivex:rxjava:1.1.0',  //rx编码
+            "rxandroid"               : 'io.reactivex:rxandroid:1.1.0', //rx编码
+           // "rxbinding"               : 'com.jakewharton.rxbinding:rxbinding:latest.release',//rxbinding
+           // "okhttp"                  : 'com.squareup.okhttp3:okhttp:latest.release',//网络请求
+           // "okhttplog-interceptor"   : 'com.squareup.okhttp3:logging-interceptor:latest.release',//网络请求
+          //  "retrofit"                : 'com.squareup.retrofit2:retrofit:latest.release',//网络请求
+           // "retrofit-adapter"        : 'com.squareup.retrofit2:adapter-rxjava:latest.release',//网络请求
+           // "retrofit-gson"           : 'com.squareup.retrofit2:converter-gson:latest.release',//网络请求
+           // "retrofit-scalars"        : 'com.squareup.retrofit2:converter-scalars:latest.release',//网络请求
+
+           // "leakcanary-debug"        : 'com.squareup.leakcanary:leakcanary-android:1.5',//内存溢出插件
+           // "leakcanary-release"      : 'com.squareup.leakcanary:leakcanary-android-no-op:1.5',//内存溢出插件
+            "permission"              : 'com.github.hotchemi:permissionsdispatcher:2.1.3',//权限管理
+            "permission-apt"          : 'com.github.hotchemi:permissionsdispatcher-processor:2.1.3',//权限管理
+            //"baseadapter"             : 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.1.3', //recyclerview adapter
+    ]
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
